@@ -2,6 +2,7 @@
 To store chef cookbooks for windows 
 
 <B>Configuring Chef-Solo </B>
+
 *) Download and install ChefDK in the system.
 
 *) Chef will be installed in C:\opscode\chefdk 
