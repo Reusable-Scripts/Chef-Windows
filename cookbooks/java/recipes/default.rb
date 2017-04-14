@@ -34,7 +34,7 @@ end
 
 execute "unzip_1.8.0.71" do
   cwd "C:/ChefRemoteFiles/"
-  command "7za.exe x C:/ChefRemoteFiles/1.8.0_71.zip -oD:/java/jdk/new * -r -y"
+  command "7za.exe x C:/ChefFiles/1.8.0_71.zip -oD:/java/jdk/new * -r -y"
   action :nothing
 end
 
