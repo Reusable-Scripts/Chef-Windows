@@ -16,7 +16,7 @@ file_cache_path tmp
 
 data_bag_path   File.join(tmp, 'data_bags')
 
-cookbook_path   File.join(tmp, 'site-cookbooks')
+cookbook_path   File.join(tmp, 'cookbooks')
 
 role_path       File.join(tmp, 'roles')
 </B>
