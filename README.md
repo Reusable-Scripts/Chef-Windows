@@ -21,5 +21,5 @@ cookbook_path   File.join(tmp, 'cookbooks')
 role_path       File.join(tmp, 'roles')
 </B>
 
-*) Run 'chef-solo -cC:\Chef\solo.rb' 
+*) Run 'chef-solo -c C:\Chef\solo.rb' 
 
