@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  <role rolename="tomcat"/>
+  <role rolename="role1"/>
+  <user username="tomcat" password="<must-be-changed>" roles="tomcat"/>
+  <user username="both" password="<must-be-changed>" roles="tomcat,role1"/>
+  <user username="role1" password="<must-be-changed>" roles="role1"/>
+-->
+
+<role rolename="manager-gui"/>
+<user username="<%= node['tomcat']['app_user'] %>" password="s3cret" roles="manager-gui"/>
+<!--<role rolename="admin-gui"/>
+<user username="tomcat" password="s3cret" roles="admin-gui"/>
+<role rolename="manager-gui"/>
+<user username="tomcat" password="s3cret" roles="manager-gui"/>
+-->
+</tomcat-users>

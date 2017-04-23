@@ -1,0 +1,5 @@
+default['nexus']['tomcat_url'] = ""
+default['tomcat']['app_port'] = "8080"
+default['tomcat']['app_shout_port'] = "8005"
+default['tomcat']['Connector_port'] = "8009"
+default['tomcat']['app_user'] = "tomcatadmin"
