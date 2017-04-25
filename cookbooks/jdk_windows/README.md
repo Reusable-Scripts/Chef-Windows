@@ -9,10 +9,42 @@ This cookbook makes your favorite breakfast sandwich.
 
 TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
 
+<B>CHEF-SOLO to be installed in the system and configure cookbooks path for solo.
+<B>create solo.rb, with below content. I have my cookbooks under C:\Chef here.
+
+
+tmp = 'c:/Chef/'
+
+file_cache_path tmp
+
+data_bag_path   File.join(tmp, 'data_bags')
+
+cookbook_path   File.join(tmp, 'cookbooks')
+
+role_path       File.join(tmp, 'roles')
+
+
+<B> A role file(jdk_windows.json) to be created with below content.
+
+
+{
+	"run_list":[
+  
+  "recipe[jdk_windows::default]"
+  
+]
+}
+<\B>
+
+<B>Command to run:
+C:\opscode\chefdk\bin\chef-solo -c C:\Chef\solo\solo.rb -j C:\Chef\cookbooks\jdk_windows\jdk_windows.json
+
+
+
 e.g.
 ### Platforms
 
-- SandwichOS
+Windows
 
 ### Chef
 
