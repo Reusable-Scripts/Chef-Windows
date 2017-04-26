@@ -22,17 +22,29 @@ directory 'C:\ChefSoftwares\TomcatApp\TomcatService' do
     action :create
 end
 
-remote_file 'C:\ChefSoftwares\TomcatApp\7zip.exe' do
+remote_file 'C:\ChefSoftwares\TomcatApp\7zip.msi' do
     source zip_url
     action :create_if_missing
 end
+
+template 'C:\ChefSoftwares\TomcatApp\7zip-install.bat' do
+    source '7zip-install.bat.erb'
+    action :create_if_missing
+    notifies :run, 'execute[7zip-install]', :immediately
+end
+
+execute "7zip-install" do
+  cwd 'C:\\ChefSoftwares'
+  command "call 7zip-install.bat"
+  action :nothing
+end
+
 remote_file 'C:\ChefSoftwares\TomcatApp\tomcat.zip' do
     source remote_path
     action :create_if_missing
     notifies :run, 'execute[tomcat.zip]',  :immediately
 end
-
-
+  
 execute 'tomcat.zip' do
   cwd 'C:\\ChefSoftwares\\TomcatApp'
   command "7za.exe x C:\\ChefSoftwares\\TomcatApp\\tomcat.zip -oC:\\ChefSoftwares\\TomcatApp\\TomcatService * -r -y"
